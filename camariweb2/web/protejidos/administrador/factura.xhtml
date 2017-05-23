@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../plantillas/general.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <h:form id="frmFactura">  
+            <p:panel id="pnlFactura">
+                
+                <center><h1>TABLA FACTURA</h1></center>
+    <p:dataTable 
+        id="tblFactura" 
+        value="#{cFactura.lista}"
+        var="fac"
+        selectionMode="single"
+        selection="#{cFactura.selectedFactura}"
+        rowKey="#{fac.id_factura}">
+    <p:column headerText="NO_FACTURA">
+        
+        <h:outputText value="#{fac.id_factura}" />
+    </p:column>
+        
+    <p:column headerText="ID_CLIENTE">
+        <h:outputText value="#{fac.cliente.nombre}" />
+    </p:column>
+        
+    <p:column headerText="FECHA">
+        <h:outputText value="#{fac.fecha}" />
+    </p:column>
+ 
+    <p:column headerText="SUBTOTAL">
+        <h:outputText value="#{fac.subtotal}" />
+    </p:column>
+ 
+    <p:column headerText="IVA">
+        <h:outputText value="#{fac.iva}" />
+    </p:column>
+        
+    <p:column headerText="TOTAL">
+        <h:outputText value="#{fac.total}" />
+    </p:column>
+</p:dataTable>
+         </p:panel>
+    </h:form>
+        
+       
+        
+        
+        
+    </ui:define>
+
+</ui:composition>
